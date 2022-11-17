@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block CodigoDinamico %}
+<form action="" method="get">
+    <h2>
+        Buscar una selección
+    </h2>
+    <input type="text" name="seleccion" id="seleccion">
+    <button type="submit">Buscar</button>
+</form>
+{% if selecciones %}
+    <ul>
+    {% for seleccion in selecciones %}
+        <li>
+            La selección de {{seleccion.pais}} es del continente de {{seleccion.continente}}.
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>
+        No hay datos
+    </p>
+{% endif %}
+{% endblock CodigoDinamico %}

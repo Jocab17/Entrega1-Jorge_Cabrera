@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block CodigoDinamico %}
+<form action="" method="get">
+    <h2>
+        Buscar un jugador
+    </h2>
+    <input type="text" name="jugador" id="jugador">
+    <button type="submit">Buscar</button>
+</form>
+{% if jugadores %}
+    <ul>
+    {% for jugador in jugadores %}
+        <li>
+            {{jugador.nombre}} {{jugador.apellido}} juega para la seleccion de {{jugador.pais}}.
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>
+        No hay datos
+    </p>
+{% endif %}
+{% endblock CodigoDinamico %}

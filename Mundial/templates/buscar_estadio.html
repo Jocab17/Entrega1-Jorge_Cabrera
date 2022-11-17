@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block CodigoDinamico %}
+<form action="" method="get">
+    <h2>
+        Buscar un estadio
+    </h2>
+    <input type="text" name="estadio" id="estadio">
+    <button type="submit">Buscar</button>
+</form>
+{% if estadios %}
+    <ul>
+    {% for estadio in estadios %}
+        <li>
+            El estadio {{estadio.nombre}} tiene una capacidad de {{estadio.capacidad}} asientos.
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>
+        No hay datos
+    </p>
+{% endif %}
+{% endblock CodigoDinamico %}
